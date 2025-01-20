@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
+
+:root{
+    --clr-accent-100:hsl(12, 88%, 59%);
+ hsl(13, 100%, 96%)
+    --clr-accent-400:;
+    --clr-primary-400:hsl(228, 39%, 23%);
+   
+
+    --clr-neutral-900: hsl(227, 12%, 61%);
+    --clr-neutral-100:; 
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+html,
+body {
+  height: 100%;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,31 @@
+<header>
+    <nav>
+        <div class="bg-indigo-500 text-black width-full h-14 px-4 flex md:px-4 items-center justify-between">
+            <div>
+                <h2 class="text-xl text-indigo-700 font-bold"><a routerLink="/">All products</a></h2>
+            </div>
+            <div>
+                <ul class="md:flex hidden list-none">
+
+
+                    @for (cat of categories$ | async; track $index) {
+                    <li><a class="mx-4" [routerLink]="['products',cat]">{{cat}}</a></li>
+                    }
+                    <li><a class="mx-4" routerLink="/cart">Cart</a></li>
+                    <li><a class="mx-4" routerLink="/orders">Orders</a></li>
+                </ul>
+            </div>
+            <div>
+                <button
+                    class="text-white md:block hidden bg-indigo-700 p-2 font-bold cursor-pointer">Login/Signup</button>
+                <div class="md:hidden">
+                    <a href="" class="text-3xl">&#8801;</a>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <!-- nav bar ends here -->
+    <router-outlet></router-outlet>
+</header>

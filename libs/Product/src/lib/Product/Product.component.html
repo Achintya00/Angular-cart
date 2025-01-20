@@ -1,0 +1,38 @@
+<div class="my-6 mx-3 place-items-center grid grid-cols-1 md:grid-cols-3 gap-4">
+
+    @for (item of product$ | async; track $index) {
+    <div class="flex flex-col h-auto w-[90%] md:max-w-80 shadow-lg rounded-lg bg-slate-700">
+        <div class="flex gap-4 p-4">
+
+            <img class="overflow-hidden w-[50px] h-[50px] rounded-3xl object-cover" src={{item.image}}
+                alt={{item.title}}>
+
+
+            <div class="flex flex-col gap-2">
+                <p class="text-white text-ellipsis text-sm">{{item.title | slice:0:11}}</p>
+                <p class="text-gray-400">{{item.price | currency:'INR'}}</p>
+            </div>
+
+
+        </div>
+        <div>
+            <img class="w-full h-52 overflow-hidden object-cover" src="{{item.image}}" alt="">
+
+            <div class="block">
+                <p class="py-2 px-4 text-white">{{item.description}}
+                </p>
+            </div>
+
+
+
+        </div>
+        <div class="flex gap-4 p-4">
+            <button class="bg-red-500 py-2 px-3 rounded-xl font-semibold text-white">Add To Cart</button>
+            <button class="bg-blue-500 py-2 px-3 rounded-xl font-semibold text-white">Buy Now</button>
+        </div>
+    </div>
+    }
+
+
+
+</div>

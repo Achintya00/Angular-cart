@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@store-workspace/Category": ["libs/Category/src/index.ts"],
+      "@store-workspace/Product": ["libs/Product/src/index.ts"],
+      "@store-workspace/home": ["libs/home/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
