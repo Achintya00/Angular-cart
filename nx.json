@@ -82,7 +82,9 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "standalone": true
     },
     "@nx/angular:component": {
       "style": "css"

@@ -7,10 +7,26 @@
             <div>
                 <ul class="md:flex hidden list-none">
 
+                    <div class="relative h-fit w-fit mx-4">
+                        <div class="group">
+                            <li><a class="cursor-pointer">Categories
+                                    <span
+                                        class="absolute w-20 scale-x-0 top-6 left-0 group-hover:scale-x-100 h-1 origin-left rounded-lg bg-indigo-300 transition-transform duration-300 ease-out"></span>
+                                </a></li>
 
-                    @for (cat of categories$ | async; track $index) {
-                    <li><a class="mx-4" [routerLink]="['products',cat]">{{cat}}</a></li>
-                    }
+                            <ul
+                                class="absolute hidden top-10 left-1/2 -translate-x-1/2 w-48 shadow-lg bg-white group-hover:block group-active:block divide-y divide-gray-200">
+                                <div
+                                    class="absolute left-1/2 hover:block top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white">
+                                </div>
+                                @for (cat of categories$ | async; track $index) {
+                                <li><a class="block px-4 py-2" [routerLink]="['products',cat]">{{cat}}</a></li>
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+
                     <li><a class="mx-4" routerLink="/cart">Cart</a></li>
                     <li><a class="mx-4" routerLink="/orders">Orders</a></li>
                 </ul>

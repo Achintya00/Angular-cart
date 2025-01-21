@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@store-workspace/Cart": ["libs/Cart/src/index.ts"],
       "@store-workspace/Category": ["libs/Category/src/index.ts"],
       "@store-workspace/Product": ["libs/Product/src/index.ts"],
       "@store-workspace/home": ["libs/home/src/index.ts"]
