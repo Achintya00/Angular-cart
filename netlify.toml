@@ -1,12 +1,11 @@
-[[plugins]]
-package = "@netlify/angular-runtime"
-
+    
 [build]
-  command = "nx build your-app-name --configuration=production"
-  publish = "dist/apps/your-app-name"
+  command = "nx build storeApp --configuration=production"
+  publish = "dist/apps/storeApp"
 
 [functions]
   directory = "netlify/functions"
 
   [build.environment]
   NODE_VERSION = "18"
+
