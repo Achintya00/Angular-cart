@@ -18,6 +18,11 @@ export const appRoutes: Route[] = [
     pathMatch: 'full',
   },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('@store-workspace/User').then((m) => m.LoginComponent),
+  },
+  {
     path: 'products',
     loadComponent: () =>
       import('@store-workspace/home').then((m) => m.HomeComponent),

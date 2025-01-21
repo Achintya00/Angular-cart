@@ -1,6 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'lib-login',
@@ -10,7 +16,10 @@ import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   search = new FormControl();
-  fb = inject(FormBuilder);
+  loginForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  });
   // constructor(){
 
   // }
