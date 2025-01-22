@@ -32,8 +32,32 @@
                 </ul>
             </div>
             <div>
+                @if (!isLoggedIn) {
                 <a class="text-white md:block hidden bg-indigo-700 p-2 font-bold cursor-pointer"
                     routerLink="/login">Login/Signup</a>
+                }@else{
+                <div class="relative h-fit w-fit"></div>
+                <div class="group">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 w-6 h-6 cursor-pointer text-indigo-700">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+
+                    <ul
+                        class="absolute hidden top-10 left-1/2 -translate-x-1/2 w-48 shadow-lg bg-white group-active::block divide-y divide-gray-200">
+                        <div
+                            class="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white">
+                        </div>
+
+                        <li><a class="block px-4 py-2">Logout</a></li>
+                        <li><a class="block px-4 py-2">Profile</a></li>
+                    </ul>
+                </div>
+
+
+                }
+
                 <div class="md:hidden">
                     <a href="" class="text-3xl">&#8801;</a>
                 </div>

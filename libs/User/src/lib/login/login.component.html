@@ -15,11 +15,12 @@
                     Password
                 </span>
             </label>
-            <input type="text" name="Password" placeholder="Password" formControlName="password"
+            <input type="password" name="Password" placeholder="Password" formControlName="password"
                 class="bg-transparent p-2 border outline-none text-white placeholder:text-slate-400 rounded-lg border-slate-500"><br>
             <div class="mt-5 flex items-center justify-center">
                 <button [ngClass]="loginForm.invalid?'disabled:opacity-75':''"
-                    class="px-4 py-2 rounded-xl text-white bg-blue-500 " [disabled]="loginForm.invalid">Login</button>
+                    class="px-4 py-2 rounded-xl text-white bg-blue-500 " [disabled]="loginForm.invalid"
+                    (click)="Login()">Login</button>
             </div>
 
         </div>
