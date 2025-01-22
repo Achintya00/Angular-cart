@@ -1,11 +1,8 @@
     
 [build]
-  command = "nx build storeApp --configuration=production"
+  command = "echo ANGULAR_WORKSPACE_FILE=$ANGULAR_WORKSPACE_FILE && npx nx run storeApp:build --skip-nx-cache --configuration=production"
   publish = "dist/apps/storeApp"
 
-[functions]
-  directory = "netlify/functions"
-
-  [build.environment]
+[build.environment]
   NODE_VERSION = "18"
-
+  ANGULAR_WORKSPACE_FILE="project.json" 
