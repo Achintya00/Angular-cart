@@ -1,0 +1,34 @@
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "default"
+package = "@netlify/angular-runtime"
+
+[plugins.inputs]
+
+[build]
+publish = "C:\\Users\\Achintya Dhingra\\Desktop\\Frontend\\storeWorkspace\\dist\\apps\\storeApp"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "echo ANGULAR_WORKSPACE_FILE=$ANGULAR_WORKSPACE_FILE && npx nx run storeApp:build --skip-nx-cache --configuration=production"
+
+[build.environment]
+NODE_VERSION = "18"
+ANGULAR_WORKSPACE_FILE = "project.json"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
