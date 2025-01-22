@@ -10,6 +10,7 @@ import {
 } from '@store-workspace/Product';
 import { cartFeature, cartEffects } from '@store-workspace/Cart';
 import { authGuard } from '@store-workspace/User';
+
 export const appRoutes: Route[] = [
   {
     path: '',
@@ -48,5 +49,10 @@ export const appRoutes: Route[] = [
       import('@store-workspace/Cart').then((m) => m.CartComponent),
     providers: [provideState(cartFeature), provideEffects({ cartEffects })],
     canActivate: [authGuard],
+  },
+  {
+    path: 'profile',
+    loadComponent: () =>
+      import('@store-workspace/User').then((m) => m.ProfileComponent),
   },
 ];

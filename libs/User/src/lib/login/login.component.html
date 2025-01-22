@@ -10,7 +10,8 @@
             <input type="text" name="username" formControlName="username" placeholder="Email"
                 class="bg-transparent outline-none p-2 border text-white placeholder:text-slate-400 rounded-lg border-slate-500 mb-5">
             <label for="Password" class="block mb-2">
-                <span [ngClass]="loginForm.get('password')?.value === '' ? 'after:content-[\'*\']':''"
+                <span
+                    [ngClass]="loginForm.get('password')?.value === '' ? 'after:content-[\'*\']':'after:content-[\'\']'"
                     class="text-white after:ml-[5px] after:text-blue-500 block font-semibold">
                     Password
                 </span>
