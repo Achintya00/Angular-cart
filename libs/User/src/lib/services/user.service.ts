@@ -9,6 +9,6 @@ export class UserService {
   private http = inject(HttpClient);
 
   getUserDetails() {
-    return this.http.get<User[]>('https://fakestoreapi.com/users/1');
+    return this.http.get<User>('https://fakestoreapi.com/users/1');
   }
 }
