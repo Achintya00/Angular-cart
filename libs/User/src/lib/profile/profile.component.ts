@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, Signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserService } from '../services/user.service';
@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { User } from '../models/user.models';
+
 @Component({
   selector: 'lib-profile',
   imports: [CommonModule, ReactiveFormsModule],
@@ -27,9 +27,18 @@ export class ProfileComponent implements OnInit {
       name: new FormControl(''),
       email: new FormControl(''),
       phone: new FormControl(''),
-      address: this.fb.group({
-        city: ['', Validators.required],
-        country: ['', Validators.required],
+      address: this.fb.group(this.addAddress()),
+    });
+  }
+  addAddress() {
+    return this.fb.group({
+      city: '',
+      street: '',
+      number: '',
+      zipcode: '',
+      geolocation: this.fb.group({
+        lat: '',
+        long: '',
       }),
     });
   }
