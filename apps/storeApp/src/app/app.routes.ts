@@ -49,4 +49,9 @@ export const appRoutes: Route[] = [
     providers: [provideState(cartFeature), provideEffects({ cartEffects })],
     canActivate: [authGuard],
   },
+  {
+    path: 'Orders',
+    loadComponent: () =>
+      import('@store-workspace/orders').then((m) => m.OrdersComponent),
+  },
 ];
