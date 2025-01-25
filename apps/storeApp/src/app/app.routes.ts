@@ -51,6 +51,11 @@ export const appRoutes: Route[] = [
     canActivate: [authGuard],
   },
   {
+    path: 'Orders',
+    loadComponent: () =>
+      import('@store-workspace/orders').then((m) => m.OrdersComponent),
+  },
+  {
     path: 'profile',
     loadComponent: () =>
       import('@store-workspace/User').then((m) => m.ProfileComponent),

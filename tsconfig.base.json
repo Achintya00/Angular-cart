@@ -19,7 +19,8 @@
       "@store-workspace/Category": ["libs/Category/src/index.ts"],
       "@store-workspace/Product": ["libs/Product/src/index.ts"],
       "@store-workspace/User": ["libs/User/src/index.ts"],
-      "@store-workspace/home": ["libs/home/src/index.ts"]
+      "@store-workspace/home": ["libs/home/src/index.ts"],
+      "@store-workspace/orders": ["libs/orders/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
