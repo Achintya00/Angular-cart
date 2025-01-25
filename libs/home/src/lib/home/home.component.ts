@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 
-import { productAction, selectProduct } from '@store-workspace/Product';
+import { productAction, productFeature } from '@store-workspace/Product';
 
 import { Product } from '@store-workspace/Product';
 import { Store } from '@ngrx/store';
@@ -19,6 +19,6 @@ export class HomeComponent {
   constructor() {
     console.log();
     this.store.dispatch(productAction.loadProduct());
-    this.product$ = this.store.select(selectProduct);
+    this.product$ = this.store.select(productFeature.selectProducts);
   }
 }

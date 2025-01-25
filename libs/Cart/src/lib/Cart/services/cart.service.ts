@@ -10,4 +10,7 @@ export class CartService {
   getCart() {
     return this.http.get<Cart[]>('https://fakestoreapi.com/carts');
   }
+  getCartById(id: number) {
+    return this.http.get<Cart>(`https://fakestoreapi.com/carts/${id}`);
+  }
 }

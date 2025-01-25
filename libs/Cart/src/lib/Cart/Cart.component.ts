@@ -4,7 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { Cart } from './models/cart.models';
 import { Store } from '@ngrx/store';
 import { cartAction } from './store/cart.actions';
-import { cartSelect, cartSelector } from './store/cart.selector';
+import { cartFeature } from './store/cart.reducer';
 
 @Component({
   selector: 'lib-cart',
@@ -14,9 +14,11 @@ import { cartSelect, cartSelector } from './store/cart.selector';
 })
 export class CartComponent implements OnInit {
   constructor(private store: Store) {}
-  cart$!: Observable<Cart[]>;
+  cart$!: Observable<Cart | undefined>;
+
   ngOnInit(): void {
-    this.cart$ = this.store.select(cartSelect);
+    this.cart$ = this.store.select(cartFeature.selectCurrentCart);
     this.store.dispatch(cartAction.loadCart());
+    this.store.dispatch(cartAction.loadCartById({ id: 2 }));
   }
 }

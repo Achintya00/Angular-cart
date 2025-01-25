@@ -9,7 +9,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 
-import { selectProduct } from './store/product.selector';
+import { productFeature } from './store/product.reducer';
 import { productAction } from './store/product.actions';
 import { Observable } from 'rxjs';
 import { Product } from './store/models/product.model';
@@ -45,7 +45,7 @@ export class ProductComponent implements OnInit {
     // this.store.dispatch(
     //   productAction.loadProductByCategory({ categories: this.categoryName() })
     // );
-    this.product$ = this.store.select(selectProduct);
+    this.product$ = this.store.select(productFeature.selectProducts);
     console.log(this.categoryName);
   }
 }

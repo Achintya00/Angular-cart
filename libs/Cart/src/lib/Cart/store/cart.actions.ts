@@ -4,8 +4,11 @@ import { Cart } from '../models/cart.models';
 export const cartAction = createActionGroup({
   source: 'Cart',
   events: {
-    'Load Cart': emptyProps(),
-    'Cart Success': props<{ cart: Cart[] }>(),
-    'Cart Failure': props<{ error: string }>(),
+    LoadCart: emptyProps(),
+    LoadCartById: props<{ id: number }>(),
+    CartSuccess: props<{ cart: Cart[] }>(),
+    CartFailure: props<{ error: string }>(),
+    CartByIdSuccess: props<{ cart: Cart }>(),
+    CartByIdError: props<{ error: string }>(),
   },
 });

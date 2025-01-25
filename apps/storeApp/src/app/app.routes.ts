@@ -8,7 +8,7 @@ import {
   productEffects,
   productFeature,
 } from '@store-workspace/Product';
-import { cartFeature, cartEffects } from '@store-workspace/Cart';
+import { cartFeature, cartEffects, cartById } from '@store-workspace/Cart';
 import { authGuard } from '@store-workspace/User';
 
 export const appRoutes: Route[] = [
@@ -47,7 +47,10 @@ export const appRoutes: Route[] = [
     path: 'cart',
     loadComponent: () =>
       import('@store-workspace/Cart').then((m) => m.CartComponent),
-    providers: [provideState(cartFeature), provideEffects({ cartEffects })],
+    providers: [
+      provideState(cartFeature),
+      provideEffects({ cartEffects, cartById }),
+    ],
     canActivate: [authGuard],
   },
   {
