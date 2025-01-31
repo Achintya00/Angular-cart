@@ -7,12 +7,22 @@
         <label for="email">Email:</label>
         <input type="email" class="rounded-lg py-1 outline-none bg-slate-700 text-slate-500 px-4" name="email"
             formControlName="email">
-        <label for="">City:</label>
-        <input type="text" class="rounded-lg py-1 w-full outline-none mr-2 bg-slate-700 text-slate-500 px-4"
-            placeholder="city" formControlName="city">
-        <label for="street">Steet</label>
-        <input type="text" formControlName="street" name="street"
-            class="rounded-lg py-1 w-full outline-none bg-slate-700 text-slate-500 px-4" placeholder="street">
+        <div formGroupName="address">
+            <label for="">City:</label>
+            <input type="text" class="rounded-lg py-1 w-full outline-none mr-2 bg-slate-700 text-slate-500 px-4"
+                placeholder="city" formControlName="city">
+            <label for="street">Steet</label>
+            <input type="text" formControlName="street" name="street"
+                class="rounded-lg py-1 w-full outline-none bg-slate-700 text-slate-500 px-4" placeholder="street">
+            <label for="number">House number</label>
+            <input type="text" formControlName="number" name="number"
+                class="rounded-lg py-1 w-full outline-none bg-slate-700 text-slate-500 px-4" placeholder="number">
+            <label for="zipcode">zipcode</label>
+            <input type="text" formControlName="zipcode" name="zipcode"
+                class="rounded-lg py-1 w-full outline-none bg-slate-700 text-slate-500 px-4" placeholder="zipcode">
+            
+        </div>
+
     </div>
 
 

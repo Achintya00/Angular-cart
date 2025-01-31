@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
     });
   }
   addAddress() {
-    return this.fb.group({
+    return {
       city: '',
       street: '',
       number: '',
@@ -40,6 +40,6 @@ export class ProfileComponent implements OnInit {
         lat: '',
         long: '',
       }),
-    });
+    };
   }
 }
