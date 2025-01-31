@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,4 +7,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './order-list.component.html',
   styleUrl: './order-list.component.css',
 })
-export class OrderListComponent {}
+export class OrderListComponent {
+  category = input.required()
+}
